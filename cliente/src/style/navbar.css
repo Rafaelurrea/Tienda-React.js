@@ -1,0 +1,47 @@
+.navbar {/*se le da tamaño y posicion al header*/
+  width: 100%;
+  height: 100px;
+  background-color: rgb(14, 139, 139);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.LogoInicio {
+  display: flex;
+  width: 200px;
+  height: 100%
+
+}
+
+.LogoInicio img{
+  height: 100%;
+  width: 100%;
+}
+
+.links {/*se le da posicion a los contenedores de los link */
+  display: flex;
+  align-items: center;
+  margin-right: 40px;
+}
+
+
+
+.links a {/*se le agrega estilo a los textos de los links*/
+  text-decoration: none;
+  color: white;
+  margin-left: 20px;
+  font-size: 25px;
+}
+
+.carrito {
+    width: 60px;
+    height: 60px;
+}
+
+
+h1{
+  border: 6px solid black;
+  cursor: default;
+}
+

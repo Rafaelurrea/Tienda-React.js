@@ -1,0 +1,53 @@
+
+.product{
+    background-color:rgba(20, 20, 20, 0.603);
+    border: 2px solid white;
+    color: rgb(255, 254, 254);
+    font-size: 15px;
+    margin: 0 auto;
+}
+ul{
+    width: 100%;
+    height: 100%;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+img{
+width: 100%;
+height: 100%;
+}
+
+.description{
+
+    padding: 10px;
+    text-align: center;
+    color: rgb(255, 254, 254);
+    margin-top: -30px;
+    /*i want that the products have text less gap*/
+}
+.name{
+    font-size: 1rem;
+}
+.description p{
+    line-height: 1.1;
+        /*i want that the products have text less gap*/
+        text-align: center;
+        padding: 10px;
+        font-family: Lato, sans-serif;
+        line-height: 0.8rem;
+
+}
+  
+.addToCartBtn {
+    background-color:rgb(42, 206, 195);
+    border: 2px solid rgb(0, 0, 0);
+    min-width: 100px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 15px;
+    margin-bottom: 5px;
+  }

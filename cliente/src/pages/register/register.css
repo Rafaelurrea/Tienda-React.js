@@ -1,0 +1,68 @@
+form{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.RegisterBackground{
+    background-color: lightgray;
+    margin: 0 auto;
+    padding: 40px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.RegisterForm{
+    width: 500px;
+    margin: 0 auto;
+    background-color: rgb(14, 139, 139);
+    border-radius: 20px;
+    margin-bottom: 40px;
+}
+
+.RegisterForm h2 {
+    font-family: Lato, sans-serif;
+    font-weight: bold;
+    text-align: center;
+    color: #000000;
+    font-size: 28px;
+    padding: 60px 50px 12px 50px;
+}
+
+.LoginForm h4{
+    font-family: Lato, sans-serif;
+    font-weight: bold;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    color: rgba(0, 0, 0, 0.644);
+}
+
+
+.RegisterForm input[type = "password"],
+.RegisterForm input[type = "text"] {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ced4da;
+    margin-bottom:10px;
+    box-sizing: border-box;
+}
+
+.BtnLogin{
+    width: 100%;
+    padding: 15px;
+    background-color: rgb(76, 162, 5);
+    border: 0;
+    box-sizing: border-box;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: large;
+    color: white;
+    border-radius: 10px;
+}
+
+.BtnLogin:hover, btn-login:active{
+    color: white;
+    background-color: #165c19;
+    border-color: #165c19;
+}
