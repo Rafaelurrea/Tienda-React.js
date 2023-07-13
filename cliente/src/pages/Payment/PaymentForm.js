@@ -4,11 +4,7 @@ import { ShopContext } from "../../context/shop-context";
 import axios from "axios";
 import './payment.css';
 import { useNavigate } from "react-router-dom";
-const URI = 'http://localhost:3001/sendEmail/'; //direccion en la que se hacen peticiones 
-const NAVEGATE = useNavigate()
-
-
-
+const NAVEGATE = useNavigate();
 
 const CARD_OPTIONS = {//estilos para el formulario de pago
 	iconStyle: "solid",
@@ -38,7 +34,7 @@ const CARD_OPTIONS = {//estilos para el formulario de pago
 
         const handleSubmit = async (e) => {
             e.preventDefault();
-            NAVEGATE("")
+            NAVEGATE("/")
 
             alert("Pay success 🤑")
             const {error, paymentMethod} = await stripe.createPaymentMethod({
