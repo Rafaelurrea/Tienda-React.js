@@ -3,7 +3,7 @@
   height: auto;
   min-height: 100vh;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background-color: rgb(69, 69, 69);
+  background-color: lightgrey;
 }
 
 body {/*se quita el padding y margin que vienen por defecto en la pagina*/

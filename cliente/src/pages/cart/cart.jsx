@@ -1,6 +1,6 @@
 import React, {useContext} from 'react';
 import { ShopContext } from "../../context/shop-context";//importamos el context
-import { CartItem } from './cart-item'; //importamos el cartitem para cada item que se ingrese en el carrito
+import { CartItem } from './cart-item'; //importamos el cart-item para cada item que se ingrese en el carrito
 import "./cart.css"; //vinculamos el css
 import { useNavigate } from 'react-router-dom' //se importa para poder redireccionar
 import axios from 'axios';//se usa para hacer peticiones al servidor
@@ -39,6 +39,8 @@ export const Cart = () => {
             "8": cartItems[8],
             "9": cartItems[9],
             "10": cartItems[10],
+            "11": cartItems[11],
+            "12": cartItems[12],
         
         }).catch((err) => {
             alert(err.message)
@@ -55,7 +57,7 @@ export const Cart = () => {
             <div className="cartItems">
                 {products.map((product) => {
                     if (cartItems[product.id] > 0) {{/*para cada producto lo mostramos */}
-                        return <CartItem data={product} />;
+                        return <CartItem data={product}  />;
                     }
                 })}
             </div>

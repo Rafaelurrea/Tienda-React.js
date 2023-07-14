@@ -99,6 +99,7 @@ const updateContent = async (product, quantity) => {
         sendMail({nombre: product});
     }
 }
+
 //Se compran los productos y se usa updatecontent para actualizar el contenido de cada uno
 export const buyProducts = async (req, res) => {
     try {

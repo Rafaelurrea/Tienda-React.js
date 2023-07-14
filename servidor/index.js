@@ -3,17 +3,17 @@ import cors from 'cors';//Intercambio de recursos de origen cruzado, permite evi
 import db from './database/db.js';//conexion base de datos
 import productRoutes from './routes/routesProducts.js';//rutas de los productos
 import userRoutes from './routes/routesUser.js';//rutas de los usuarios
-import emailSend from "./mail/mail.js"
 import ProductModel from './models/ProductModel.js';//modelo de los productos
 import {pay} from './routes/pay.js';//ruta para pagar
 const app = Express();//la app se conecta con express
+
 
 app.use(cors());//prevenir fallas de conexcion
 app.use(Express.json());//permite obtener el paquete express en un json
 app.use('/products', productRoutes);//se generalizan las rutas de los productso
 app.use('/users', userRoutes);//se generalizan las rutas de los usuarios
 app.use('/payment',pay);//se generalizan las rutas de los pagos
-app.use('/sendEmail', emailSend)
+
 
 //se busca conectarse a la base de datos
 try {

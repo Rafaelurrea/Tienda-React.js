@@ -10,7 +10,7 @@ const stripeTestPromise = loadStripe(PUBLIC_KEY); //se crea una variable en la q
 export default function StripeContainer() {
     return (
         <Elements stripe={stripeTestPromise}>{/*se llama al elemento al formulario de del pago  */}
-                <PaymentForm/>
+                <PaymentForm />
         </Elements>
     )
 }

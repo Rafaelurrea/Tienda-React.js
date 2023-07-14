@@ -17,7 +17,10 @@ export const pay = async (req,res) => {
         res.json({
             message: 'payment succesful',
             succes: true
-        })
+        }
+        
+        
+        )
     } catch (error) {
         console.log('error', error);
         res.json({

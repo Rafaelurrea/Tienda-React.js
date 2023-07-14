@@ -82,7 +82,6 @@
 
   .buttonContainer{
     display: flex;
-    background-color: blue;
     margin-bottom: 10px;
     justify-content: center;
     align-items: end;

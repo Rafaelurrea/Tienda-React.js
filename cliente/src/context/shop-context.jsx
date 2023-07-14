@@ -48,10 +48,10 @@ export const ShopContextProvider = (props) => {
     };
 
     const addToCart = async (itemId) => { //funcion para poder agregar al carrito enviando como parametro el id del producto y poder reservarlo en el servidor
-        await axios.get('http://localhost:3001/products/book/'+ itemId + '?f=book')//se genera una peticion get para poder traer el el producto el cual se va reservar el producto
+        await axios.get("http://localhost:3001/products/book/"+ itemId + "?f=book")//se genera una peticion get para poder traer el producto el cual se va reservar el producto
         .then(({ data }) => {
-            data==='Booked' ? setCartItems((prev) => ({...prev, [itemId]: prev[itemId] + 1 })) : void(0);//si el dato extraido es Booked le sumamos 1 a la posicion que represente al producto dentro del arreglo para poder saber la cantidad de cada producto
-            data==='Stockout' ? alert('Empty product') : void(0); //en caso de que el estado retornado sea Stockout se crea una alerta que dice que el producto esta vacio y no hace nada
+            data==="Booked" ? setCartItems((prev) => ({...prev, [itemId]: prev[itemId] + 1 })) : void(0);//si el dato extraido es Booked le sumamos 1 a la posicion que represente al producto dentro del arreglo para poder saber la cantidad de cada producto
+            data==="Stockout" ? alert("There is no stock in this moment") : void(0); //en caso de que el estado retornado sea Stockout se crea una alerta que dice que el producto esta vacio y no hace nada
         })
         .catch(error => {
             console.log(error.message);//si hay un error lo muestra por consola
@@ -59,9 +59,9 @@ export const ShopContextProvider = (props) => {
     };
 
     const removeFromCart = async (itemId) => { //funcion para remover del carrito a partir del id
-        await axios.get('http://localhost:3001/products/book/'+ itemId + '?f=unbook')//en esta ruta se hace la peticion
+        await axios.get("http://localhost:3001/products/book/"+ itemId + "?f=unbook")//en esta ruta se hace la peticion
         .then(({ data }) => {
-            data==='Unbooked' ? setCartItems((prev) => ({...prev, [itemId]: prev[itemId] - 1 })) : void(0);//si tiene el estado unbooked se le resta 1 en el arreglo de la cantidad
+            data==="Unbooked" ? setCartItems((prev) => ({...prev, [itemId]: prev[itemId] - 1 })) : void(0);//si tiene el estado unbooked se le resta 1 en el arreglo de la cantidad
         })
         .catch(error => {
             console.log(error.message);

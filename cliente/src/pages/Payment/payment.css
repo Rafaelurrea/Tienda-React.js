@@ -8,10 +8,10 @@
 }
 
 .FormGroup {
-	margin: 80px 180px 30px 180px;
-	padding: 10px;
+	margin: 80px 180px 15px 180px;
+	padding: 30px 10px;
 	border-style: none;
-	background-color: #1a2958;
+	background-color: #004badc4;
 	will-change: opacity, transform;
 	border-radius: 4px;
 }
@@ -21,7 +21,7 @@
 	justify-content: center;
 	font-family: Lato, sans-serif;
 	font-weight: bold;
-	font-size: 16px;
+	font-size: 20px;
 	color: white;
 }
 
@@ -34,6 +34,11 @@
 	border-top: 1px solid #5378f0;
 }
 
+form{
+	display: flex;
+	flex-wrap: wrap;
+}
+
 .StripeElement--webkit-autofill {
 	background: transparent !important;
 }
@@ -44,14 +49,16 @@
 }
 
 .pay {
+	display: -ms-flexbox;
+	display: flex;
 	justify-content: center;
 	align-items: center;
 	font-size: 16px;
 	font-family: Lato, sans-serif;
 	font-weight: bold;
 	cursor: pointer;
-	margin: 80px 180px 30px 180px;
-	padding: 15px 250px;
+	margin: 30px 160px 30px 160px;
+	padding: 15px 160px;
 	border-style: none;
 	background-color: rgb(37, 158, 26);
 	border-radius: 4px;
