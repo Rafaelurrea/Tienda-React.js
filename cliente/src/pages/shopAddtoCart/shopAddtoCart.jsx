@@ -5,7 +5,7 @@ import axios from 'axios';
 import { useState } from 'react';
 import { useEffect } from 'react';
 
-const URI = 'https://tienda-virtual-5kf44zl6k-santiocampo01.vercel.appproducts/'; //aqui se hacen las peticiones 
+const URI = 'https://tienda-virtual-k237.onrender.com/'; //aqui se hacen las peticiones 
 
 export const ShopAddtoCart = () => {
 

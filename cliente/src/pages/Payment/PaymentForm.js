@@ -58,7 +58,7 @@ export default function PaymentForm() {
     if(!error){
         try {
             const {id} = paymentMethod//si n hay error se almacena el if de payment method
-            const response = await axios.post("https://tienda-virtual-5kf44zl6k-santiocampo01.vercel.apppayment/", { //se cre una peticion para el pago
+            const response = await axios.post("https://tienda-virtual-k237.onrender.com/", { //se cre una peticion para el pago
                 amount: context.payAumount, //con el total de la compra
                 id
             });
