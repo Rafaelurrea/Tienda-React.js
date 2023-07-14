@@ -15,7 +15,7 @@ app.use('/users', userRoutes);//se generalizan las rutas de los usuarios
 app.use('/payment',pay);//se generalizan las rutas de los pagos
 
 
-//se busca conectarse a la base de datos
+//se busca conectarse a la base de datos,autentificando la informacion
 try {
     db.authenticate()
     console.log('conexion exitosa a la bd');
@@ -23,11 +23,12 @@ try {
     console.log(`el error de conexion fue ${error}`);
 }
 
-const PORT = process.env.PORT || 3001;//conexion al servidor backend
-
+//  Se asigna el puerto en el que escuchara el servidor y se hara un app.listen
+const PORT = process.env.PORT || 3001;
 app.listen(PORT, ()=>{
     console.log(`server running on port ${PORT}`);//info de donde esta corriendo el server
 })
+
 
 //usando el modelo de productos, encuentra a todos los productos y devuelve sus correspondientes atributos y se guarda en el objeto en products
 const products = await ProductModel.findAll({
@@ -35,7 +36,7 @@ const products = await ProductModel.findAll({
 })
 
 
-let productsStock = {}//objeto para guardar el stock minmo de los productos
+let productsStock = {}//objeto para guardar el stock de los productos
 let productMinStock = {}//objeto para guardar el stock minimo de los productos
 
 //para cada producto obtenido, 
@@ -43,8 +44,8 @@ products.forEach(product => {
     productsStock[product.dataValues.id] = product.dataValues.stock;//se le asigna el id correspondiente al producto y a su vez el valor del stock en forma de objeto
 });
 products.forEach(product => {
-    productMinStock[product.dataValues.id] = {stockMin: product.dataValues.stockMin, nombre: product.dataValues.nombre};//se le asigna el id correspondiente al producto y a su vez el valor minimo del stock en forma de objeto, junto con el nomrbe
+    productMinStock[product.dataValues.id] = {stockMin: product.dataValues.stockMin, nombre: product.dataValues.nombre};//se le asigna el id correspondiente al producto y a su vez el valor minimo del stock en forma de objeto, junto con el nombre
 });
 console.log(productMinStock);
-export {productsStock, productMinStock};//exportation de los objetos
+export {productsStock, productMinStock};//exportamos los objetos
 

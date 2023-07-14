@@ -1,15 +1,17 @@
 
   .shopTitle {
-    margin-top: 100px;
+    margin: 0 auto;
     text-align: center;
     font-size: 40px;
   }
   .products {
+    margin: 0 auto;
     width: 100vw;
     height: auto;
     display: flex;
     flex-wrap: wrap;
     place-items: center;
+    background-color: #171031;
   }
   
   .product {
@@ -27,7 +29,7 @@
     color: white;
   }
 
-  
+  /* //this animation should be more fast */
   @keyframes slide {
     0% {margin-left: 0%;}
     33% {margin-left: 0%;}
@@ -40,16 +42,19 @@
   }
 
  .slide-var {
-    width: 50%;
+    width: 100%;
     overflow: hidden;
-    margin: 0 auto;
+    /* margin: 0 auto; */
  }
-
  .slide-var ul {
-    display: flex;
-    padding: 0;
-    width: 300%;
-    animation: slide 12s infinite alternate ease-in-out;
+  display: flex;
+  padding: 0;
+  width: 300%;
+}
+
+
+ .slide-var ul:hover {
+    animation: slide 1s infinite alternate ease-in-out;
  }
 
  .slide-var li {

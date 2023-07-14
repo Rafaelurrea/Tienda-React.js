@@ -1,6 +1,6 @@
 import express from "express";//Se importa express para facilitar la comunicacion con el servidor
-import { bookProduct, buyProducts,getAllProducts,getProduct,createProduct,updateProducts,deleteProduct } from "../controllers/ProductControllers.js";//obteniendo todos los controladores ya creados para ser usados
-const router = express.Router();
+import { bookProduct, buyProducts,getAllProducts,getProduct,createProduct,updateProducts,deleteProduct } from "../controllers/ProductControllers.js";//obtenemos todos los controladores ya creados para ser usados 
+const router = express.Router(); //definimos un enrotador para ayudar con las direccion
 
 
 //generacion de rutas para usa la api creada para interactuar con la base de datos

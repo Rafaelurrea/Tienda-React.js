@@ -1,9 +1,14 @@
+//Importamos express para manejar solicitudes
 import express from "express";
-import nodemailer from 'nodemailer'; //se improta la libreria nodemailer que permite el facil envio de correo
+
+//se improta la libreria nodemailer que permite el facil envio de correo
+import nodemailer from 'nodemailer';
+
+//Importamos la tabla del producto en nuestra base de datos
 import ProductModel from "../models/ProductModel.js";
 
 
-//El transportador, simplemente una receta de cocina en la cual SMTP protocolo simple de transferencia de correo
+//El transportador, se encargara de ser el conducto para pasar el correo
 const transporter = nodemailer.createTransport({
     host: 'smtp.gmail.com',
     port: 587,
@@ -13,6 +18,7 @@ const transporter = nodemailer.createTransport({
     }
 });
 
+//sendEmail es una funcion que no recibe ningun parametro, pero que se encargara de enviar el email de cuando el stock este bajo, junto con su asunto y mensaje
 export const sendMail =   () => {
 
     transporter.sendMail({
@@ -24,6 +30,8 @@ export const sendMail =   () => {
     .catch(console.catch)
 }
 
+
+//sendEmailBuy es igual a senMail, pero esta se encargara de enviar el email cuando una compra se realice en la pagina
 export const sendEmailBuy =  (req, res) => {
     // Obtén los datos necesarios de la solicitud POST
     const { product } = req.body;

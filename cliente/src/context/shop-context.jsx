@@ -1,8 +1,11 @@
-import React, { createContext, useState } from 'react';
-import axios from 'axios';//se importa axios para generar peticiones al servidor
-import { useEffect } from 'react';
+//Importamos React y sus funciones de createContext, useState y useEffect
+import React, { createContext, useState,useEffect } from 'react';
 
-export const ShopContext = createContext(null);
+//se importa axios para generar peticiones al servidor
+import axios from 'axios';
+
+
+export const ShopContext = createContext(null);//createContext es básicamente un contenedor que permite pasar datos a través del árbol de componentes de React sin necesidad de pasar props manualmente en cada nivel. 
 const URI = 'http://localhost:3001/products/';//esta sera la ruta a la cual se generaran peticiones en este caso sera para los productos
 
 const getDefaultCart = () => {//se crea un arreglo que se usara para darle una cantidad a cada producto esto, cada posicion del arreglo contendra un cero como cantidad
@@ -35,8 +38,8 @@ export const ShopContextProvider = (props) => {
     }
 
 
-    const getTotalCartAmount = () => {//esta funcion permite dabe
-        let totalAmount = 0;//se crea una variable con el total que comenzara en 0
+    const getTotalCartAmount = () => {//esta funcion permite obtener el total de la compra acumulada en el carrito
+        let totalAmount = 0;//se crea una variable con el total, esta comenzara en 0
         for (const item in cartItems) {//se crea una bucle que recorre cada item del arreglo carItems 
             if (cartItems[item] > 0) { //se pregunta si el valor del en la posicion item de ese arreglo es mayor de 0
                 let itemInfo = products.find((product) => product.id === Number(item)); //dentro de una variable se almacena el producto para poder usar el precio mas adelante
@@ -47,7 +50,7 @@ export const ShopContextProvider = (props) => {
         return totalAmount;//retorna el valor total de la compra 
     };
 
-    const addToCart = async (itemId) => { //funcion para poder agregar al carrito enviando como parametro el id del producto y poder reservarlo en el servidor
+    const addToCart = async (itemId) => { //funcion para poder agregar al carrito un producto enviando como parametro el id del producto y poder reservarlo en el servidor
         await axios.get("http://localhost:3001/products/book/"+ itemId + "?f=book")//se genera una peticion get para poder traer el producto el cual se va reservar el producto
         .then(({ data }) => {
             data==="Booked" ? setCartItems((prev) => ({...prev, [itemId]: prev[itemId] + 1 })) : void(0);//si el dato extraido es Booked le sumamos 1 a la posicion que represente al producto dentro del arreglo para poder saber la cantidad de cada producto
@@ -68,7 +71,7 @@ export const ShopContextProvider = (props) => {
         }) 
     };
 
-    const contextValue = { cartItems, addToCart, removeFromCart, getTotalCartAmount, loggedChanger, logged, AdminChanger, admin, payAumount,setPayAumount};//metemos todas las funciones y hooks dentro del contexto
+    const contextValue = { cartItems, addToCart, removeFromCart, getTotalCartAmount, loggedChanger, logged, AdminChanger, admin, payAumount,setPayAumount};//metemos todas las funciones y hooks dentro del contexto para  en la app
     return (
         <ShopContext.Provider value={contextValue}>
             {props.children}

@@ -5,7 +5,7 @@ import axios from "axios";
 import './payment.css';
 
 
-const URI = "http://localhost:3001/users/sendEmailBuy";
+const URI = "http://localhost:3001/users/sendEmailBuy";//Direccion a la que van las peticiones
 
 const CARD_OPTIONS = {//estilos para el formulario de pago
 	iconStyle: "solid",
@@ -27,6 +27,7 @@ const CARD_OPTIONS = {//estilos para el formulario de pago
 	}
 }
 
+//Funcion que nos ayuda a definir el formato del formulario de pago
 export default function PaymentForm() {
     const context = useContext(ShopContext);
     const [success , setSucces] = useState(false);//para saber si fue un exito o no
@@ -69,12 +70,14 @@ export default function PaymentForm() {
     }else {
         console.log(error.message);
     }
+    alert("")
 }
 
+    //Diseño de nuestra pagina de pago
     return (
-        <div>
+        <div >
         {!success ?
-        <form onSubmit={handleSubmit}>
+        <form className="backgroundContainer" onSubmit={handleSubmit}>
             <fieldset className="FormGroup">
                 <h4>Enter your card information to continue  💳</h4>
                 <div className="FormRow">

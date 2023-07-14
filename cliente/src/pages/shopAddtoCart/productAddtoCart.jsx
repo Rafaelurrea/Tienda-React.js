@@ -11,7 +11,7 @@ export const Product = (props) => {
         <div className="product">
             <div className="slide-var"> {/*se hace el carusel */}
                 <ul>
-                    <li><img src={img1} alt={nombre}/></li>
+                         <li><img src={img1} alt={nombre}/></li>  
                     <li><img src={img2} alt={nombre}/></li>
                     <li><img src={img3} alt={nombre}/></li>
                 </ul>

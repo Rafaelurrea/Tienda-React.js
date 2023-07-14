@@ -1,10 +1,16 @@
-//importamos el modelo
-
+//importamos el modelo de la tabla de la base de satos
 import ProductModel from "../models/ProductModel.js";
+
+//importamos  productsStock y el poductMinStock, que son objetos para el sotck
 import { productsStock, productMinStock } from "../index.js";
+
+//importamos sendMail, que es una funcion que nos ayudara a enviar mensajes al correo
 import { sendMail } from "../mail/mail.js";
 
-//mostrar todos los registros
+
+//Funciones para los productos:
+
+//mostrar todos los productos, recibe una peticion y devuelve una repuesta
 export const getAllProducts = async (req,res) => {
     try {
         const products  = await ProductModel.findAll()
@@ -14,7 +20,7 @@ export const getAllProducts = async (req,res) => {
     }
 }
 
-//mostrar un registro
+//mostrar un producto, //mostrar todos los productos, recibe una peticion y devuelve una repuesta
 export const getProduct = async (req,res) => {
     try {
        const product = await ProductModel.findAll({
@@ -26,7 +32,7 @@ export const getProduct = async (req,res) => {
     }
 }
 
-// crear un registro
+// crear un producto, mostrar todos los productos, recibe una peticion y devuelve una repuesta
 export const createProduct = async (req,res) => {
     try {
         await ProductModel.create(req.body)
@@ -38,7 +44,7 @@ export const createProduct = async (req,res) => {
     }
 }
 
-//actualizar registro
+//actualizar un producto mostrar un producto, recibe una peticion y devuelve una repuesta
 export const updateProducts = async (req,res) =>{
     try {
         await ProductModel.update(req.body, {
@@ -51,8 +57,8 @@ export const updateProducts = async (req,res) =>{
         res.json( {message: error.message})
     }
 }
-//eliminar registro
 
+//eliminar registro, mostrar todos los productos, recibe una peticion y devuelve una repuesta
 export const deleteProduct = async (req,res) =>{
     try {
         await ProductModel.destroy(req.body, {
@@ -66,7 +72,7 @@ export const deleteProduct = async (req,res) =>{
     }
 }
 
-//reservar o no reservar productos por medio de un click al carrito
+//reservar o no reservar productos por medio de un click al carrito, recibe una peticion y devuelve una repuesta
 
 export const bookProduct = async (req, res) => {
     try {
@@ -85,7 +91,7 @@ export const bookProduct = async (req, res) => {
     }
 }
 
-//Se actualiza el contenido de la base de datos
+//Se actualiza el contenido de la base de datos, recibiendo el producto y la cantidad
 const updateContent = async (product, quantity) => {
     const stock = await ProductModel.findAll({
         attributes: ['id', 'stock', 'nombre'],
@@ -100,7 +106,7 @@ const updateContent = async (product, quantity) => {
     }
 }
 
-//Se compran los productos y se usa updatecontent para actualizar el contenido de cada uno
+//Se compran los productos y se usa updatecontent para actualizar el contenido de cada uno, recibe una peticion y devuelve una respuesta
 export const buyProducts = async (req, res) => {
     try {
         console.log(typeof(req.body));

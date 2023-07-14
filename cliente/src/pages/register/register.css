@@ -2,10 +2,11 @@ form{
     justify-content: center;
     align-items: center;
     text-align: center;
+    background-color: #004aad; 
 }
 
 .RegisterBackground{
-    background-color: lightgray;
+    background-color: #171031;
     margin: 0 auto;
     padding: 40px;
     display: flex;
@@ -15,29 +16,31 @@ form{
 .RegisterForm{
     width: 500px;
     margin: 0 auto;
-    background-color: rgb(14, 139, 139);
-    border-radius: 20px;
+    background-color: #004aad;
+    border-radius: 10px;
     margin-bottom: 40px;
+    box-shadow: -1px 10px 53px 2px rgba(165, 233, 245, 0.5);
+    border: 2px solid black ;
 }
 
-.RegisterForm h2 {
-    font-family: Lato, sans-serif;
-    font-weight: bold;
-    text-align: center;
-    color: #000000;
-    font-size: 28px;
-    padding: 60px 50px 12px 50px;
-}
-
-.LoginForm h4{
+.RegisterForm .text{
+    color: #ffff;
     font-family: Lato, sans-serif;
     font-weight: bold;
     text-align: center;
     align-items: center;
     justify-content: center;
-    color: rgba(0, 0, 0, 0.644);
 }
 
+
+.RegisterForm h2 {
+    font-family: Lato, sans-serif;
+    font-weight: bold;
+    text-align: center;
+    color: #ffff;
+    font-size: 28px;
+    padding: 60px 50px 12px 50px;
+}
 
 .RegisterForm input[type = "password"],
 .RegisterForm input[type = "text"] {
@@ -58,7 +61,6 @@ form{
     font-weight: bold;
     font-size: large;
     color: white;
-    border-radius: 10px;
 }
 
 .BtnLogin:hover, btn-login:active{

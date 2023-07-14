@@ -5,16 +5,17 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import './editProduct.css';
 
-const URI = 'http://localhost:3001/products/'; //aqui se hacen las peticiones
+
+const URI = 'http://localhost:3001/products/'; //direccion donde se haran  las peticiones
 
 export const EditProduct = () => {
 
-    const[products, setProducts] = useState([]) // aqui se guardan los productos
+    const[products, setProducts] = useState([]) // aqui se guardan los productos de la base de datos
     useEffect(() => {
         getProduct()
     }, []);
 
-    const getProduct = async () => {//aqui se hace la solicitud
+    const getProduct = async () => {//aqui se hace la solicitud para obtener los productos
         const res = await axios.get(URI)
         setProducts(res.data)
     }

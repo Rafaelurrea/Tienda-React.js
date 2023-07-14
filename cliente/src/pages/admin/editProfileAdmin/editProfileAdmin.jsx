@@ -7,11 +7,11 @@ import "./editProfileAdmin.css";
 const URIADMIN = 'http://localhost:3001/users/3/'; //aqui se hacen las peticiones para el admin
 
 const EditAdmin = () => {
-    const [password, setPassword] = useState('');//se guarda la contrasena
+    const [password, setPassword] = useState('');//se guarda la contraseña
     const [adress, setAdress] = useState('');//nueva direccion
     const [telephone, setTelephone] = useState('');//nuevo telefono
     const [email, setEmail] = useState('');//nuevo email
-    const navigate = useNavigate();
+    const navigate = useNavigate(); //El navigate nos permite movernos estre URLs
     const navigateShop = () => {
         navigate(`/editInventory`);//redirecciona a editar el inventario
     }

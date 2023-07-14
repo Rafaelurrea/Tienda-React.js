@@ -3,8 +3,9 @@ import axios from 'axios';
 import { EditProduct } from "./editProduct.jsx";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-const URI = 'http://localhost:3001/products/';
+const URI = 'http://localhost:3001/products/';//Direccion a donde se ralizaran las peticiones
 
+//Funcion que nos permitira actualizar los productos d ela base de datos
 export const Product = (props) => {
   const { id, nombre, precio, img1, img2, img3, stockMax, stockMin, stock } = props.data;
 
@@ -23,19 +24,18 @@ export const Product = (props) => {
         stockMin: minStock,
         stock: actualStock,
       });
-
-      // Realizar cualquier otra acción después de la actualización exitosa, como mostrar una notificación, etc.
     } catch (error) {
-      // Manejar errores de actualización aquí
+      alert("Update Failed")
     }
   }
-
+     
+      //Funcion que nos recargara la ventana al actualizar un producto
   function handleStock() {
     alert("Stock changed");
     window.location.reload();
   }
-  
 
+ //Asi es como estara compuesta  nuestra modalidad de editar un producto
   return (
     <div className="product">
       <div className="slide-var">

@@ -1,32 +1,40 @@
 .LoginBackground{
-    background-color: lightgray;
+    background-color: #171031;
     margin:0 auto;
     padding: 40px;
     display: flex;
     flex-wrap: wrap;
+    height: 100vh;
+}
+
+.LoginForm{
+    box-shadow: -1px 14px 58px 8px rgba(0,0,0,0.75);
 }
 
 .LoginForm, .contenedor {
     width: 400px;
+    height: 600px;
     margin: 0 auto;
-    background-color: rgb(14, 139, 139);
-    border-radius: 20px;
+    background-color: #004aad;
+    border-radius: 10px;
+    box-shadow: -1px 10px 53px 2px rgba(165, 233, 245, 0.5);
+    border: 2px solid black ;
 } 
 
 .LoginForm h2 {
     font-family: Lato, sans-serif;
     font-weight: bold;
     text-align: center;
-    color: #000000;
+    color: #ffff;
     font-size: 28px;
     padding: 60px 50px 12px 50px;
 }
 
-.LoginForm h4{
+.LoginForm .text{
     font-family: Lato, sans-serif;
     font-weight: bold;
     text-align: center;
-    color: rgba(0, 0, 0, 0.644);
+    color: #ffff;
 }
 
 .LoginForm input[type = "password"],
@@ -39,7 +47,7 @@
 }
 
 .BtnLogin {
-    width: 100%;
+    width: 1p;
     padding: 15px;
     background-color: rgb(76, 162, 5);
     border: 0;
@@ -81,6 +89,5 @@
 }
 
 .BtnRegister:hover, btn-register:active{
-    box-shadow: 0 0 0 3px rgba(121, 82, 179, 0.25);
     background-color: #165c19;
 }
