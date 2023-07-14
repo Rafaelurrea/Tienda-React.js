@@ -34,13 +34,13 @@ export const sendMail =   () => {
 //sendEmailBuy es igual a senMail, pero esta se encargara de enviar el email cuando una compra se realice en la pagina
 export const sendEmailBuy =  (req, res) => {
     // Obtén los datos necesarios de la solicitud POST
-    const { product, name } = req.body;
+    const { product } = req.body;
   
     transporter.sendMail({
         from: "ecommerce <ecommerce@gmail.com>",
         to: ["s.jaramillo4@utp.edu.co", "santimejiaok@gmail.com", "rafael.urrea@utp.edu.co"],
         subject: "Succesful Purchase",
-        text: `Congratulations,a purchase has been made, product name: ${product.name[0].nomber}, for an amount of:  ${product.amount}`,
+        text: `Congratulations,a purchase has been made, product name: , for an amount of:  ${product.amount}`,
       })
       .then(() => {
         console.info("Correo enviado correctamente");
