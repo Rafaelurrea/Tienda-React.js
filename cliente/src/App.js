@@ -10,11 +10,13 @@ import Register from "./pages/register/register.jsx";//se importa el register pa
 import EditAdmin from "./pages/admin/editProfileAdmin/editProfileAdmin";//se importa para poder editar el administrador de la pagina
 import { EditProduct } from "./pages/admin/editProduct/editProduct";//se importa para poder editar los productos
 import StripeContainer from "./pages/Payment/stripeContainer";//se usa para poder llamar a la pagina del portal del pago
+import Footer from "./components/footer";
 //why this code can't star
 function App() {
   return (
-    <div className="App">     
-      <ShopContextProvider>
+    <div className="App">
+ 
+      <ShopContextProvider >
       <Router>
         <Navbar />
         <Routes>
@@ -29,6 +31,7 @@ function App() {
         </Routes>
       </Router>
       </ShopContextProvider>
+      <Footer />
     </div>
   );
 }

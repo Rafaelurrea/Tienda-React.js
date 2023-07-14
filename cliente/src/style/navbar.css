@@ -45,3 +45,29 @@ h1{
   color: white;
 }
 
+/*i need a responsive in width:400 and that the elements stay in his places*/
+
+@media screen and (max-width: 500px) {
+  .LogoInicio {
+    width: 100px;
+  }
+  .LogoInicio img{
+    width: 100%;
+  }
+  .carrito {
+    width: 40px;
+    height: 40px;
+  }
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+    text-align: center;
+  }
+  h1{
+    font-size: 20px;
+
+  }
+  
+}

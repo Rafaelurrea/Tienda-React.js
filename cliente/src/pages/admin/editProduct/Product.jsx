@@ -53,7 +53,7 @@ export const Product = (props) => {
         <p>Min Stock: {stockMin}</p>
         <p>Stock: {actualStock}</p>
         <form onSubmit={updateProduct} method="post">
-          <input key={priceHook}
+          <input 
             onChange={(e) => setPrice(e.target.value)}
             type="text"
             name="price"
@@ -61,7 +61,7 @@ export const Product = (props) => {
             placeholder="New Price"
             value={priceHook}
           />
-          <input key={maxStock}
+          <input 
             onChange={(e) => setMaxStock(e.target.value)}
             type="text"
             name="maxStock"
@@ -69,7 +69,7 @@ export const Product = (props) => {
             placeholder="New Max Stock"
             value={maxStock}
           />
-          <input key={minStock}
+          <input 
             onChange={(e) => setMinStock(e.target.value)}
             type="text"
             name="minStock"
@@ -78,7 +78,7 @@ export const Product = (props) => {
             value={minStock}
            
           />
-          <input key={actualStock}
+          <input 
             onChange={(e) => setActualStock(e.target.value)}
             type="text"
             name="stock"

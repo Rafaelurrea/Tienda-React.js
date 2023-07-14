@@ -1,0 +1,12 @@
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background-color: #004aad;
+}
+
+.footer a{
+    text-decoration: none;
+    color: white;
+}

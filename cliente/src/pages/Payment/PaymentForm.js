@@ -4,6 +4,7 @@ import { ShopContext } from "../../context/shop-context";
 import axios from "axios";
 import './payment.css';
 import { useNavigate } from "react-router-dom";
+import { CartItem } from "../cart/cart-item";
 
 
 const URI = "http://localhost:3001/users/sendEmailBuy";//Direccion a la que van las peticiones
@@ -42,14 +43,13 @@ export default function PaymentForm() {
         
         try {
             const response = await axios.post(URI, {
-              product: { amount: context.payAumount},
-              name: {name: context.cartItem.name.name}// Ajusta los datos del producto según tus necesidades
-            },);
-            console.log(response.data); // Maneja la respuesta del backend como desees
+              product: { amount: context.payAumount},// Ajusta los datos del producto según tus necesidades
+            }); ; // Maneja la respuesta del backend como desees
           }catch (error) {
             console.error(error);
           }
 
+          setInterval(() => {navigate('/shop')}, 3000);
 
         const {error, paymentMethod} = await stripe.createPaymentMethod({
             type: "card",//se crea un metodo de pago por tarjeta
@@ -58,7 +58,7 @@ export default function PaymentForm() {
     if(!error){
         try {
             const {id} = paymentMethod//si n hay error se almacena el if de payment method
-            const response = await axios.post("http://localhost:3001/payment", { //se cre una peticion para el pago
+            const response = await axios.post("http://localhost:3001/payment/", { //se cre una peticion para el pago
                 amount: context.payAumount, //con el total de la compra
                 id
             });
