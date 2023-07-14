@@ -6,7 +6,7 @@ import axios from 'axios';
 
 
 export const ShopContext = createContext(null);//createContext es básicamente un contenedor que permite pasar datos a través del árbol de componentes de React sin necesidad de pasar props manualmente en cada nivel. 
-const URI = 'https://tienda-virtual-k237.onrender.com/';//esta sera la ruta a la cual se generaran peticiones en este caso sera para los productos
+const URI = 'https://tienda-virtual-k237.onrender.com';//esta sera la ruta a la cual se generaran peticiones en este caso sera para los productos
 
 const getDefaultCart = () => {//se crea un arreglo que se usara para darle una cantidad a cada producto esto, cada posicion del arreglo contendra un cero como cantidad
     let cart = {}

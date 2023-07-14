@@ -4,7 +4,7 @@ import Login from "../login/login.jsx";
 import { useNavigate } from "react-router-dom";
 
 
-const URI = "https://tienda-virtual-k237.onrender.com/"; //direccion en la que se hacen peticiones
+const URI = "https://tienda-virtual-k237.onrender.com"; //direccion en la que se hacen peticiones
 
 export const Product = (props) => {
     const { nombre, precio, descripcion, img1, img2, img3 } = props.data; //se le da valor a las variables en funcion de lo que se saca de la base de datos
