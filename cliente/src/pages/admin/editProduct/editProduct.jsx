@@ -6,7 +6,7 @@ import { useEffect } from 'react';
 import './editProduct.css';
 
 
-const URI = 'https://tienda-virtual-5kf44zl6k-santiocampo01.vercel.app//products/'; //direccion donde se haran  las peticiones
+const URI = 'https://tienda-virtual-5kf44zl6k-santiocampo01.vercel.appproducts/'; //direccion donde se haran  las peticiones
 
 export const EditProduct = () => {
 

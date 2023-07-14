@@ -4,7 +4,7 @@ import axios from 'axios';
 import { useState } from "react";
 import "./editProfileAdmin.css";
 
-const URIADMIN = 'https://tienda-virtual-5kf44zl6k-santiocampo01.vercel.app//users/3/'; //aqui se hacen las peticiones para el admin
+const URIADMIN = 'https://tienda-virtual-5kf44zl6k-santiocampo01.vercel.appusers/3/'; //aqui se hacen las peticiones para el admin
 
 const EditAdmin = () => {
     const [password, setPassword] = useState('');//se guarda la contraseña
