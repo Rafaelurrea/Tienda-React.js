@@ -6,7 +6,7 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import '../../App.css';
 
-const URI = 'https://tienda-virtual-k237.onrender.com/'; //se hacen las peticiones aqui 
+const URI = 'https://api.render.com/deploy/srv-ciolfp6nqqlfegd927e0?key=i0Gz58yml08/'; //se hacen las peticiones aqui 
 
 export const Shop = () => {
 

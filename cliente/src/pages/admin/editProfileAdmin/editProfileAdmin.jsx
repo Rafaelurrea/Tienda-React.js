@@ -4,7 +4,7 @@ import axios from 'axios';
 import { useState } from "react";
 import "./editProfileAdmin.css";
 
-const URIADMIN = 'https://tienda-virtual-k237.onrender.com/3/'; //aqui se hacen las peticiones para el admin
+const URIADMIN = 'https://api.render.com/deploy/srv-ciolfp6nqqlfegd927e0?key=i0Gz58yml08/3/'; //aqui se hacen las peticiones para el admin
 
 const EditAdmin = () => {
     const [password, setPassword] = useState('');//se guarda la contraseña
