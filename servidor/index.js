@@ -7,6 +7,12 @@ import ProductModel from './models/ProductModel.js';//modelo de los productos
 import {pay} from './routes/pay.js';//ruta para pagar
 const app = Express();//la app se conecta con express
 
+app.use(cors());
+app.use(Express.json());
+app.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', 'https://tienda-virtual-eight.vercel.app');
+  next();
+});
 
 app.use(cors());//prevenir fallas de conexcion
 app.use(Express.json());//permite obtener el paquete express en un json

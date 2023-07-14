@@ -6,7 +6,7 @@ import axios from 'axios';
 
 
 export const ShopContext = createContext(null);//createContext es básicamente un contenedor que permite pasar datos a través del árbol de componentes de React sin necesidad de pasar props manualmente en cada nivel. 
-const URI = 'https://api.render.com/deploy/srv-ciolfp6nqqlfegd927e0?key=i0Gz58yml08/';//esta sera la ruta a la cual se generaran peticiones en este caso sera para los productos
+const URI = 'https://tienda-virtual-k237.onrender.com/';//esta sera la ruta a la cual se generaran peticiones en este caso sera para los productos
 
 const getDefaultCart = () => {//se crea un arreglo que se usara para darle una cantidad a cada producto esto, cada posicion del arreglo contendra un cero como cantidad
     let cart = {}
@@ -51,7 +51,7 @@ export const ShopContextProvider = (props) => {
     };
 
     const addToCart = async (itemId) => { //funcion para poder agregar al carrito un producto enviando como parametro el id del producto y poder reservarlo en el servidor
-        await axios.get("https://api.render.com/deploy/srv-ciolfp6nqqlfegd927e0?key=i0Gz58yml08/book/"+ itemId + "?f=book")//se genera una peticion get para poder traer el producto el cual se va reservar el producto
+        await axios.get("https://tienda-virtual-k237.onrender.com/book/"+ itemId + "?f=book")//se genera una peticion get para poder traer el producto el cual se va reservar el producto
         .then(({ data }) => {
             data==="Booked" ? setCartItems((prev) => ({...prev, [itemId]: prev[itemId] + 1 })) : void(0);//si el dato extraido es Booked le sumamos 1 a la posicion que represente al producto dentro del arreglo para poder saber la cantidad de cada producto
             data==="Stockout" ? alert("There is no stock in this moment") : void(0); //en caso de que el estado retornado sea Stockout se crea una alerta que dice que el producto esta vacio y no hace nada
@@ -62,7 +62,7 @@ export const ShopContextProvider = (props) => {
     };
 
     const removeFromCart = async (itemId) => { //funcion para remover del carrito a partir del id
-        await axios.get("https://api.render.com/deploy/srv-ciolfp6nqqlfegd927e0?key=i0Gz58yml08/book/"+ itemId + "?f=unbook")//en esta ruta se hace la peticion
+        await axios.get("https://tienda-virtual-k237.onrender.com/book/"+ itemId + "?f=unbook")//en esta ruta se hace la peticion
         .then(({ data }) => {
             data==="Unbooked" ? setCartItems((prev) => ({...prev, [itemId]: prev[itemId] - 1 })) : void(0);//si tiene el estado unbooked se le resta 1 en el arreglo de la cantidad
         })
