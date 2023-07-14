@@ -31,8 +31,7 @@ export const Product = (props) => {
      
       //Funcion que nos recargara la ventana al actualizar un producto
   function handleStock() {
-    alert("Stock changed");
-    window.location.reload();
+    //window.location.reload();
   }
 
  //Asi es como estara compuesta  nuestra modalidad de editar un producto
@@ -49,36 +48,37 @@ export const Product = (props) => {
         <p>
           <b>{nombre}</b>
         </p>
-        <p>${precio}</p>
+        <p>${priceHook}</p>
         <p>Max Stock: {stockMax}</p>
         <p>Min Stock: {stockMin}</p>
         <p>Stock: {actualStock}</p>
         <form onSubmit={updateProduct} method="post">
-          <input
+          <input key={priceHook}
             onChange={(e) => setPrice(e.target.value)}
             type="text"
             name="price"
             id="price"
             placeholder="New Price"
-      
+            value={priceHook}
           />
-          <input
+          <input key={maxStock}
             onChange={(e) => setMaxStock(e.target.value)}
             type="text"
             name="maxStock"
             id="maxStock"
             placeholder="New Max Stock"
-    
+            value={maxStock}
           />
-          <input
+          <input key={minStock}
             onChange={(e) => setMinStock(e.target.value)}
             type="text"
             name="minStock"
             id="minStock"
             placeholder="New Min Stock"
+            value={minStock}
            
           />
-          <input
+          <input key={actualStock}
             onChange={(e) => setActualStock(e.target.value)}
             type="text"
             name="stock"

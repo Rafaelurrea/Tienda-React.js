@@ -3,6 +3,7 @@ import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import { ShopContext } from "../../context/shop-context";
 import axios from "axios";
 import './payment.css';
+import { useNavigate } from "react-router-dom";
 
 
 const URI = "http://localhost:3001/users/sendEmailBuy";//Direccion a la que van las peticiones
@@ -33,6 +34,7 @@ export default function PaymentForm() {
     const [success , setSucces] = useState(false);//para saber si fue un exito o no
     const stripe = useStripe()
     const elements = useElements()
+    const navigate = useNavigate();
 
 
     const handleSubmit = async (e) => {
@@ -40,10 +42,11 @@ export default function PaymentForm() {
         
         try {
             const response = await axios.post(URI, {
-              product: { amount: context.payAumount, name: context.cartItems }, // Ajusta los datos del producto según tus necesidades
-            });
+              product: { amount: context.payAumount},
+              name: {name: context.cartItem.name.name}// Ajusta los datos del producto según tus necesidades
+            },);
             console.log(response.data); // Maneja la respuesta del backend como desees
-          } catch (error) {
+          }catch (error) {
             console.error(error);
           }
 
@@ -63,6 +66,7 @@ export default function PaymentForm() {
             if (response.data.success){
                 console.log("succesful payment");
                 setSucces(true);
+                
             }
         }catch (error) {
             console.log("error",error);
@@ -70,7 +74,7 @@ export default function PaymentForm() {
     }else {
         console.log(error.message);
     }
-    alert("")
+
 }
 
     //Diseño de nuestra pagina de pago
