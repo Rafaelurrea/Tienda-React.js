@@ -7,7 +7,7 @@ import axios from 'axios';//se usa para hacer peticiones al servidor
 import { useState } from 'react';
 import { useEffect } from 'react';
 
-const URI = 'http://localhost:3001/products/';//esta sera la ruta en la cual se haran las peticiones
+const URI = 'https://tienda-virtual-5kf44zl6k-santiocampo01.vercel.app//products/';//esta sera la ruta en la cual se haran las peticiones
 
 export const Cart = () => {
     const context = useContext(ShopContext);//variable para usar el contexto
