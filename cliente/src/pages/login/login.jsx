@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { ShopContext } from "../../context/shop-context";
 
-const URI = 'https://tienda-virtual-k237.onrender.com/';//Direccion a donde se haran las peticiones
+const URI = 'https://tienda-virtual-k237.onrender.com/users/';//Direccion a donde se haran las peticiones
 
 //Componente que nos Ayudara con los registros de usuarios y admins
 const Login = () => {
