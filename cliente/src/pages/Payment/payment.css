@@ -84,9 +84,6 @@ form{
     border-radius: 4px;
     border-style: none;
     box-shadow: -1px 1px 43px 12px rgba(165,233,245,.5);
-    /* margin: 80px 180px 15px; */
     padding: 30px 10px;
-    /* display: flex; */
-    will-change: opacity, transform;
 	}
 }
