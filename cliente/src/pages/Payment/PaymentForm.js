@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { CartItem } from "../cart/cart-item";
 
 
-const URI = "https://tienda-virtual-k237.onrender.com/sendEmailBuy";//Direccion a la que van las peticiones
+const URI = "https://tienda-virtual-k237.onrender.com//sendEmailBuy";//Direccion a la que van las peticiones
 
 const CARD_OPTIONS = {//estilos para el formulario de pago
 	iconStyle: "solid",
@@ -58,7 +58,7 @@ export default function PaymentForm() {
     if(!error){
         try {
             const {id} = paymentMethod//si n hay error se almacena el if de payment method
-            const response = await axios.post("https://tienda-virtual-k237.onrender.com", { //se cre una peticion para el pago
+            const response = await axios.post("https://tienda-virtual-k237.onrender.com/", { //se cre una peticion para el pago
                 amount: context.payAumount, //con el total de la compra
                 id
             });

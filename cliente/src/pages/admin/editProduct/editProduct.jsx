@@ -6,7 +6,7 @@ import { useEffect } from 'react';
 import './editProduct.css';
 
 
-const URI = 'https://tienda-virtual-k237.onrender.com'; //direccion donde se haran  las peticiones
+const URI = 'https://tienda-virtual-k237.onrender.com/'; //direccion donde se haran  las peticiones
 
 export const EditProduct = () => {
 

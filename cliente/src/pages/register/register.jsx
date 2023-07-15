@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import axios from 'axios';
 import { useState, useEffect } from "react";
 
-const URI = 'https://tienda-virtual-k237.onrender.com'; //direccion en la que se hacen peticiones 
+const URI = 'https://tienda-virtual-k237.onrender.com/'; //direccion en la que se hacen peticiones 
 
 const Register = () => {
     const [name, setName] = useState(''); //todo esto son valores que se registran en la base de datos

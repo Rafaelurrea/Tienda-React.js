@@ -3,7 +3,7 @@ import axios from 'axios';
 import { EditProduct } from "./editProduct.jsx";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-const URI = 'https://tienda-virtual-k237.onrender.com';//Direccion a donde se ralizaran las peticiones
+const URI = 'https://tienda-virtual-k237.onrender.com/';//Direccion a donde se ralizaran las peticiones
 
 //Funcion que nos permitira actualizar los productos d ela base de datos
 export const Product = (props) => {
