@@ -10,7 +10,7 @@ const URI = 'https://tienda-virtual-k237.onrender.com/products/';//esta sera la 
 
 const getDefaultCart = () => {//se crea un arreglo que se usara para darle una cantidad a cada producto esto, cada posicion del arreglo contendra un cero como cantidad
     let cart = {}
-    for(let i = 1; i < 12 ; i++) {
+    for(let i = 1; i <= 12 ; i++) {
         cart[i] = 0
     }
     return cart;
