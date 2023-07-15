@@ -23,7 +23,7 @@ export const sendMail =   () => {
 
     transporter.sendMail({
         from: "ecommerce <ecommerce@gmail.com",
-        to: ["s.jaramillo4@utp.edu.co", "santimejiaok@gmail.com", "rafael.urrea@utp.edu.co"],
+        to: ["s.jaramillo4@utp.edu.co", "santimejiaok@gmail.com", "rafael.urrea@utp.edu.co", "sntao56@gmail.com"],
         subject: "Stock at its minimun",
         text: `One of your products is almost empty, please check it ${product.amount}`
     }).then(console.info)
